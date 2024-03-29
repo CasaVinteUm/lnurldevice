@@ -56,6 +56,8 @@ async def update_lnurldevice(
 
     if data.switches:
         url = req.url_for("lnurldevice.lnurl_v2_params", device_id=lnurldevice_id)
+        print(f"URL: {url}")
+
         for _switch in data.switches:
             _switch.lnurl = lnurl_encode(
                 str(url)
