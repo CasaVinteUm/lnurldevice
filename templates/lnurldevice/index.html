@@ -14,12 +14,12 @@
       </q-card-section>
     </q-card>
 
-        <q-card>
-            <q-card-section>
+    <q-card>
+      <q-card-section>
         <div class="row items-center no-wrap q-mb-md">
-                    <div class="col">
-                        <h5 class="text-subtitle1 q-my-none">LNURLdevice</h5>
-                    </div>
+          <div class="col">
+            <h5 class="text-subtitle1 q-my-none">LNURLdevice</h5>
+          </div>
 
           <div class="col-auto">
             <q-input
@@ -67,72 +67,72 @@
             </q-tr>
           </template>
 
-                    <template v-slot:body="props">
-                        <q-tr :props="props">
-                            <q-td>
-                                <q-btn
-                                    flat
-                                    dense
-                                    size="xs"
-                                    @click="openUpdatelnurldeviceLink(props.row.id)"
-                                    icon="edit"
-                                    color="blue"
-                                >
-                                    <q-tooltip>Edit LNURLDevice</q-tooltip>
-                                </q-btn>
-                            </q-td>
-                            <q-td>
-                                <q-btn
-                                    flat
-                                    dense
-                                    size="xs"
-                                    @click="deletelnurldeviceLink(props.row.id)"
-                                    icon="cancel"
-                                    color="pink"
-                                >
-                                    <q-tooltip> Delete LNURLDevice </q-tooltip>
-                                </q-btn>
-                            </q-td>
-                            <q-td>
-                                <q-btn
-                                    flat
-                                    dense
-                                    size="xs"
-                                    @click="openlnurldeviceSettings(props.row.id)"
-                                    icon="perm_data_setting"
-                                    color="primary"
-                                >
+          <template v-slot:body="props">
+            <q-tr :props="props">
+              <q-td>
+                <q-btn
+                  flat
+                  dense
+                  size="xs"
+                  @click="openUpdatelnurldeviceLink(props.row.id)"
+                  icon="edit"
+                  color="blue"
+                >
+                  <q-tooltip>Edit LNURLDevice</q-tooltip>
+                </q-btn>
+              </q-td>
+              <q-td>
+                <q-btn
+                  flat
+                  dense
+                  size="xs"
+                  @click="deletelnurldeviceLink(props.row.id)"
+                  icon="cancel"
+                  color="pink"
+                >
+                  <q-tooltip> Delete LNURLDevice </q-tooltip>
+                </q-btn>
+              </q-td>
+              <q-td>
+                <q-btn
+                  flat
+                  dense
+                  size="xs"
+                  @click="openlnurldeviceSettings(props.row.id)"
+                  icon="perm_data_setting"
+                  color="primary"
+                >
                   <q-tooltip> LNURLDevice Settings </q-tooltip>
-                                </q-btn>
-                            </q-td>
-                            <q-td>
-                                <q-btn
-                                    v-if="props.row.device == 'switch'"
-                                    :disable="protocol == 'http:'"
-                                    flat
-                                    unelevated
-                                    dense
-                                    size="xs"
-                                    icon="visibility"
-                                    :color="($q.dark.isActive) ? 'grey-7' : 'grey-5'"
-                                    @click="openQrCodeDialog(props.row.id)"
-                                    ><q-tooltip v-if="protocol == 'http:'">
-                                        LNURLs only work over HTTPS </q-tooltip
+                </q-btn>
+              </q-td>
+              <q-td>
+                <q-btn
+                  v-if="props.row.device == 'switch'"
+                  :disable="protocol == 'http:'"
+                  flat
+                  unelevated
+                  dense
+                  size="xs"
+                  icon="visibility"
+                  :color="($q.dark.isActive) ? 'grey-7' : 'grey-5'"
+                  @click="openQrCodeDialog(props.row.id)"
+                  ><q-tooltip v-if="protocol == 'http:'">
+                    LNURLs only work over HTTPS </q-tooltip
                   ><q-tooltip v-else> view LNURLS </q-tooltip></q-btn
-                                >
-                            </q-td>
-                            <q-td
-                                v-for="col in props.cols"
-                                :key="col.name"
-                                :props="props"
-                                auto-width
-                            >
-                                <div v-if="col.name == 'id'"></div>
-                                <div v-else>{{ col.value }}</div>
-                            </q-td>
-                        </q-tr>
-                    </template>
-                  </q-table>
+                >
+              </q-td>
+              <q-td
+                v-for="col in props.cols"
+                :key="col.name"
+                :props="props"
+                auto-width
+              >
+                <div v-if="col.name == 'id'"></div>
+                <div v-else>{{ col.value }}</div>
+              </q-td>
+            </q-tr>
+          </template>
+        </q-table>
       </q-card-section>
     </q-card>
 
@@ -222,103 +222,103 @@
             </q-tr>
           </template>
           {% endraw %}
-                </q-table>
-            </q-card-section>
-        </q-card>
-    </div>
+        </q-table>
+      </q-card-section>
+    </q-card>
+  </div>
 
-    <div class="col-12 col-md-5 q-gutter-y-md">
-        <q-card>
-            <q-card-section>
-                <h6 class="text-subtitle1 q-my-none">
-                    {{SITE_TITLE}} LNURLDevice Extension (0.4)
-                </h6>
-            </q-card-section>
-            <q-separator></q-separator>
-            <q-card-section>
-                <p>
-                    For LNURL based Points of Sale, ATMs, and relay devices<br />
-                    LNPoS:
+  <div class="col-12 col-md-5 q-gutter-y-md">
+    <q-card>
+      <q-card-section>
+        <h6 class="text-subtitle1 q-my-none">
+          {{SITE_TITLE}} LNURLDevice Extension (0.4)
+        </h6>
+      </q-card-section>
+      <q-separator></q-separator>
+      <q-card-section>
+        <p>
+          For LNURL based Points of Sale, ATMs, and relay devices<br />
+          LNPoS:
           <a class="text-secondary" href="https://lnbits.github.io/lnpos">
-                        https://lnbits.github.io/lnpos</a
-                    ><br />
-                    bitcoinSwitch:
-                    <a
-                        class="text-secondary"
-                        href="https://github.com/lnbits/bitcoinSwitch"
-                    >
-                        https://github.com/lnbits/bitcoinSwitch</a
-                    ><br />
-                    FOSSA:
+            https://lnbits.github.io/lnpos</a
+          ><br />
+          bitcoinSwitch:
+          <a
+            class="text-secondary"
+            href="https://github.com/lnbits/bitcoinSwitch"
+          >
+            https://github.com/lnbits/bitcoinSwitch</a
+          ><br />
+          FOSSA:
           <a class="text-secondary" href="https://github.com/lnbits/fossa">
-                        https://github.com/lnbits/fossa</a
-                    ><br />
-                    <small>
-                        Created by,
+            https://github.com/lnbits/fossa</a
+          ><br />
+          <small>
+            Created by,
             <a class="text-secondary" href="https://github.com/benarc"
-                            >Ben Arc</a
-                        >,
+              >Ben Arc</a
+            >,
             <a class="text-secondary" href="https://github.com/blackcoffeexbt"
-                            >BC</a
-                        >,
+              >BC</a
+            >,
             <a class="text-secondary" href="https://github.com/motorina0"
-                            >Vlad Stan</a
-                        >,
+              >Vlad Stan</a
+            >,
             <a class="text-secondary" href="https://github.com/dni">dni</a>
-                    </small>
-                </p>
-                <p class="text-warning">
+          </small>
+        </p>
+        <p class="text-warning">
           WARNING: updating the switches amount, duration or pin will change the
           QR code.
-                </p>
-            </q-card-section>
-        </q-card>
-    </div>
+        </p>
+      </q-card-section>
+    </q-card>
+  </div>
 
-    <q-dialog
-        v-model="settingsDialog.show"
-        deviceition="top"
-        @hide="closeFormDialog"
+  <q-dialog
+    v-model="settingsDialog.show"
+    deviceition="top"
+    @hide="closeFormDialog"
+  >
+    <q-card
+      style="width: 700px; max-width: 80vw"
+      class="q-pa-lg q-pt-xl lnbits__dialog-card"
     >
-        <q-card
-            style="width: 700px; max-width: 80vw"
-            class="q-pa-lg q-pt-xl lnbits__dialog-card"
+      <div class="text-h6">LNURLDevice device string</div>
+      <center>
+        <q-btn
+          v-if="settingsDialog.data.device == 'switch'"
+          dense
+          outline
+          unelevated
+          color="primary"
+          size="md"
+          @click="copyText(wslocation + '/api/v1/ws/' + settingsDialog.data.id, 'Link copied to clipboard!')"
         >
-            <div class="text-h6">LNURLDevice device string</div>
-            <center>
-                <q-btn
-                    v-if="settingsDialog.data.device == 'switch'"
-                    dense
-                    outline
-                    unelevated
-                    color="primary"
-                    size="md"
-                    @click="copyText(wslocation + '/api/v1/ws/' + settingsDialog.data.id, 'Link copied to clipboard!')"
-                  >
           {% raw %}{{wslocation}}/api/v1/ws/{{settingsDialog.data.id}}{% endraw
           %}<q-tooltip> Click to copy URL </q-tooltip>
-                </q-btn>
-                <q-btn
-                    v-else
-                    dense
-                    outline
-                    unelevated
-                    color="primary"
-                    size="md"
-                    @click="copyText(location + '/lnurldevice/api/v1/lnurl/' + settingsDialog.data.id + ',' + settingsDialog.data.key + ',' + settingsDialog.data.currency, 'Link copied to clipboard!')"
-                  >
+        </q-btn>
+        <q-btn
+          v-else
+          dense
+          outline
+          unelevated
+          color="primary"
+          size="md"
+          @click="copyText(location + '/lnurldevice/api/v1/lnurl/' + settingsDialog.data.id + ',' + settingsDialog.data.key + ',' + settingsDialog.data.currency, 'Link copied to clipboard!')"
+        >
           {% raw
-                    %}{{location}}/lnurldevice/api/v1/lnurl/{{settingsDialog.data.id}},
+          %}{{location}}/lnurldevice/api/v1/lnurl/{{settingsDialog.data.id}},
           {{settingsDialog.data.key}}, {{settingsDialog.data.currency}}{% endraw
           %}
           <q-tooltip> Click to copy URL </q-tooltip>
-                </q-btn>
-            </center>
-            <div class="text-subtitle2">
-                <small> </small>
-            </div>
-        </q-card>
-    </q-dialog>
+        </q-btn>
+      </center>
+      <div class="text-subtitle2">
+        <small> </small>
+      </div>
+    </q-card>
+  </q-dialog>
 
   <q-dialog
     v-model="formDialoglnurldevice.show"
