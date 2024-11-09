@@ -423,6 +423,15 @@
                 ></q-input>
               </div>
               <div class="col q-ml-md">
+                <q-input
+                  filled
+                  dense
+                  v-model.trim="_switch.description"
+                  type="text"
+                  label="Description"
+                ></q-input>
+              </div>
+              <div class="col q-ml-md">
                 <q-checkbox
                   v-model="_switch.variable"
                   color="primary"
@@ -442,13 +451,6 @@
                 >
                   <q-tooltip>Enable LNURLp comments with payments</q-tooltip>
                 </q-checkbox>
-                <q-input
-                    filled
-                    dense
-                    v-model.trim="_switch.description"
-                    class="q-pb-md"
-                    :label="'Description"
-                ></q-input>
               </div>
             </div>
           </div>
